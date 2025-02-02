@@ -2,7 +2,7 @@ import mongoose, { Schema } from "mongoose";
 import { IUserDocument, UserModel } from "./user";
 
 export interface IStaffDocument extends IUserDocument {
-    fonction: string;
+    poste: string;
     specialite: string;
     contratType: string;
     serviceAffecte: string;
@@ -11,7 +11,7 @@ export interface IStaffDocument extends IUserDocument {
 }
 
 const StaffSchema = new Schema<IStaffDocument>({
-    fonction: { type: String, required: true },
+    poste: { type: String, required: true },
     specialite: { type: String, required: false },
     contratType: { type: String, required: true },
     serviceAffecte: { type: String, required: true },
