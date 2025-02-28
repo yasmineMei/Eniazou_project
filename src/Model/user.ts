@@ -13,7 +13,6 @@ export interface IUserDocument extends Document {
     email: string;
     birthDate: Date;
     birthPlace: string;
-    profession: string;
     password: string;
     statut: Statut;
     profilepictureurl: string;
@@ -39,7 +38,7 @@ const UserSchema = new Schema<IUserDocument, IUserModel>(
         password: { type: String, required: true },
         profilepictureurl: { type: String, required: true },
         statut: { type: String, enum: ["ACTIVE", "BLOQUE", "SUPPRIME"], required: true },
-        role: { type: String, enum: ["PATIENT", "ADMIN", "MEDECIN", "AGENTADMIN"], required: true },
+        role: { type: String, enum: ["PATIENT", "ADMIN", "MEDECIN", "INFIRMIER", "LABORANTIN", "RECEPTIONIST", "ACCOUNTANT" ], required: true },
     },
     { timestamps: true, discriminatorKey: "role" }
 );
